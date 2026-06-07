@@ -17,8 +17,6 @@
 
 The engine ships with **player ability ratings for all 48 squads**, plus structured team data distilled from **historical pedigree, recent form, and playing style**. You define the simulation—**formations, starting elevens, match openness, tactical tendencies, and heritage weight**—or accept defaults for a one-shot prediction. Kengine then runs a **deterministic numerical simulation**: identical inputs always yield identical outputs, never LLM guesswork.
 
-The Agent interprets your intent, fills in parameters, and invokes the bundled Python CLI. **Every win rate and scoreline comes from the engine—never from the model’s imagination.**
-
 ## Preview
 
 <table>
