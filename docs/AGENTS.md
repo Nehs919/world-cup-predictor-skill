@@ -59,17 +59,17 @@ cp -r /path/to/wc-predictor-skill/wc-predictor/* ~/.hermes/skills/wc-predictor/
 hermes skills list    # 确认 wc-predictor 已出现
 ```
 
-### 方式 B：从 GitHub 安装（仓库公开后）
+### 方式 B：从 GitHub 安装
 
-将 `<owner>` 替换为你的 GitHub 用户名或组织：
+仓库：[github.com/Nehs919/wc-predictor-skill](https://github.com/Nehs919/wc-predictor-skill)
 
 ```bash
 # 克隆后复制
-git clone https://github.com/<owner>/wc-predictor-skill.git
+git clone https://github.com/Nehs919/wc-predictor-skill.git
 cp -r wc-predictor-skill/wc-predictor ~/.hermes/skills/wc-predictor
 
 # 或安装远程 SKILL.md（单文件入口；仍需自行保证 scripts/ 与 data/ 在同目录）
-hermes skills install https://raw.githubusercontent.com/<owner>/wc-predictor-skill/main/wc-predictor/SKILL.md --name wc-predictor
+hermes skills install https://raw.githubusercontent.com/Nehs919/wc-predictor-skill/master/wc-predictor/SKILL.md --name wc-predictor
 ```
 
 若使用方式 B 的单文件安装，请确认 `scripts/`、`data/`、`references/` 与 `SKILL.md` 在同一 skill 目录下。
@@ -150,5 +150,5 @@ python tools/fix_player_name_en.py
 - **Requires:** Python 3.10+, `PYTHONUTF8=1` on Windows if needed.
 - **Paths:** Cursor `~/.cursor/skills/`, Hermes `~/.hermes/skills/`, Claude `~/.claude/skills/`, Codex/multi-agent `~/.agents/skills/`, Gemini `~/.gemini/skills/`.
 - **Verify:** `python <skill-root>/scripts/predict.py --list-teams`
-- **Hermes:** `hermes skills list` after copy; see [Hermes skills docs](https://hermes-agent.nousresearch.com/docs/guides/work-with-skills).
+- **Hermes:** `hermes skills list` after copy; or `git clone https://github.com/Nehs919/wc-predictor-skill.git`; see [Hermes skills docs](https://hermes-agent.nousresearch.com/docs/guides/work-with-skills).
 - **Usage:** same workflow as Cursor — mode gate → CLI → formatted output per `SKILL.md`.
