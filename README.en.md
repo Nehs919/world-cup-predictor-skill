@@ -5,7 +5,7 @@
 > **[kengine.xx.kg](https://kengine.xx.kg)**  
 > China domain [www.kengine.fun](https://www.kengine.fun) — ICP filing in progress
 
-# wc-predictor-skill
+# world-cup-predictor-skill
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](#requirements)
@@ -42,7 +42,7 @@ All numbers come from the bundled **Kengine** Python engine — deterministic ou
 
 ## 1. Install the Skill
 
-Copy the **`wc-predictor/`** folder from this repo (`SKILL.md`, scripts, data) — not the entire `wc-predictor-skill` root. Other repo folders (`docs/`, `tools/`) are docs and maintenance scripts; **end users only need `wc-predictor/`**.
+Copy the **`wc-predictor/`** folder from this repo (`SKILL.md`, scripts, data) — not the entire `world-cup-predictor-skill` root. Other repo folders (`docs/`, `tools/`) are docs and maintenance scripts; **end users only need `wc-predictor/`**.
 
 ### Cursor
 
@@ -50,14 +50,14 @@ Copy the **`wc-predictor/`** folder from this repo (`SKILL.md`, scripts, data) �
 
 ```powershell
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\skills\wc-predictor"
-robocopy "C:\path\to\wc-predictor-skill\wc-predictor" "$env:USERPROFILE\.cursor\skills\wc-predictor" /E
+robocopy "C:\path\to\world-cup-predictor-skill\wc-predictor" "$env:USERPROFILE\.cursor\skills\wc-predictor" /E
 ```
 
 **macOS / Linux**
 
 ```bash
 mkdir -p ~/.cursor/skills/wc-predictor
-cp -r /path/to/wc-predictor-skill/wc-predictor/* ~/.cursor/skills/wc-predictor/
+cp -r /path/to/world-cup-predictor-skill/wc-predictor/* ~/.cursor/skills/wc-predictor/
 ```
 
 ### Verify
@@ -90,7 +90,7 @@ The same `wc-predictor/` folder works on Hermes, Claude Code, Codex, Gemini CLI,
 **Hermes quick install:**
 
 ```bash
-cp -r /path/to/wc-predictor-skill/wc-predictor ~/.hermes/skills/wc-predictor
+cp -r /path/to/world-cup-predictor-skill/wc-predictor ~/.hermes/skills/wc-predictor
 hermes skills list   # confirm wc-predictor appears
 ```
 
@@ -263,7 +263,7 @@ Auto-generated from openness and strength gap, e.g. close match, dominant favori
 ### Repository layout
 
 ```
-wc-predictor-skill/
+world-cup-predictor-skill/
 ├── wc-predictor/              ← copy to ~/.cursor/skills/wc-predictor/
 │   ├── SKILL.md
 │   ├── scripts/               predict.py, engine.py, sync_data.py

@@ -5,7 +5,7 @@
 > **[kengine.xx.kg](https://kengine.xx.kg)**  
 > 国内域名 [www.kengine.fun](https://www.kengine.fun) 备案中
 
-# wc-predictor-skill
+# world-cup-predictor-skill
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](#前置要求)
@@ -42,7 +42,7 @@
 
 ## 1. 安装 Skill
 
-安装包是仓库内的 **`wc-predictor/`** 目录（含 `SKILL.md`、脚本与数据），不是整个 `wc-predictor-skill` 根目录。仓库其余部分（`docs/`、`tools/`）为文档与维护脚本，**终端用户只需复制 `wc-predictor/`**。
+安装包是仓库内的 **`wc-predictor/`** 目录（含 `SKILL.md`、脚本与数据），不是整个 `world-cup-predictor-skill` 根目录。仓库其余部分（`docs/`、`tools/`）为文档与维护脚本，**终端用户只需复制 `wc-predictor/`**。
 
 ### Cursor
 
@@ -53,14 +53,14 @@
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\skills\wc-predictor"
 
 # 从本仓库复制（请按实际路径修改源路径）
-robocopy "C:\path\to\wc-predictor-skill\wc-predictor" "$env:USERPROFILE\.cursor\skills\wc-predictor" /E
+robocopy "C:\path\to\world-cup-predictor-skill\wc-predictor" "$env:USERPROFILE\.cursor\skills\wc-predictor" /E
 ```
 
 **macOS / Linux**
 
 ```bash
 mkdir -p ~/.cursor/skills/wc-predictor
-cp -r /path/to/wc-predictor-skill/wc-predictor/* ~/.cursor/skills/wc-predictor/
+cp -r /path/to/world-cup-predictor-skill/wc-predictor/* ~/.cursor/skills/wc-predictor/
 ```
 
 ### 验证安装
@@ -93,7 +93,7 @@ python ~/.cursor/skills/wc-predictor/scripts/predict.py --a ger --b cuw
 **Hermes 快速安装：**
 
 ```bash
-cp -r /path/to/wc-predictor-skill/wc-predictor ~/.hermes/skills/wc-predictor
+cp -r /path/to/world-cup-predictor-skill/wc-predictor ~/.hermes/skills/wc-predictor
 hermes skills list   # 确认 wc-predictor 已识别
 ```
 
@@ -282,7 +282,7 @@ winRateB = 1 - winRateA
 ### 项目结构
 
 ```
-wc-predictor-skill/
+world-cup-predictor-skill/
 ├── wc-predictor/              ← 安装到 ~/.cursor/skills/wc-predictor/
 │   ├── SKILL.md               Agent 工作流与输出规范
 │   ├── scripts/

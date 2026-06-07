@@ -2,7 +2,7 @@
 
 本 skill 遵循 [Agent Skills 开放标准](https://agentskills.io/specification)（`SKILL.md` + `scripts/` + `references/` + `data/`）。**同一份 `wc-predictor/` 目录**可安装到不同 Agent，无需改格式。
 
-完整安装包 = 仓库内的 **`wc-predictor/`** 子目录（不是整个 `wc-predictor-skill` 根目录）。
+完整安装包 = 仓库内的 **`wc-predictor/`** 子目录（不是整个 `world-cup-predictor-skill` 根目录）。
 
 ---
 
@@ -37,12 +37,12 @@
 ```bash
 # macOS / Linux — 以 Cursor 为例，其它 Agent 只改目标路径
 mkdir -p ~/.cursor/skills/wc-predictor
-cp -r /path/to/wc-predictor-skill/wc-predictor/* ~/.cursor/skills/wc-predictor/
+cp -r /path/to/world-cup-predictor-skill/wc-predictor/* ~/.cursor/skills/wc-predictor/
 ```
 
 ```powershell
 # Windows — Cursor
-robocopy "C:\path\to\wc-predictor-skill\wc-predictor" "$env:USERPROFILE\.cursor\skills\wc-predictor" /E
+robocopy "C:\path\to\world-cup-predictor-skill\wc-predictor" "$env:USERPROFILE\.cursor\skills\wc-predictor" /E
 ```
 
 ---
@@ -55,21 +55,21 @@ robocopy "C:\path\to\wc-predictor-skill\wc-predictor" "$env:USERPROFILE\.cursor\
 
 ```bash
 mkdir -p ~/.hermes/skills/wc-predictor
-cp -r /path/to/wc-predictor-skill/wc-predictor/* ~/.hermes/skills/wc-predictor/
+cp -r /path/to/world-cup-predictor-skill/wc-predictor/* ~/.hermes/skills/wc-predictor/
 hermes skills list    # 确认 wc-predictor 已出现
 ```
 
 ### 方式 B：从 GitHub 安装
 
-仓库：[github.com/Nehs919/wc-predictor-skill](https://github.com/Nehs919/wc-predictor-skill)
+仓库：[github.com/Nehs919/world-cup-predictor-skill](https://github.com/Nehs919/world-cup-predictor-skill)
 
 ```bash
 # 克隆后复制
-git clone https://github.com/Nehs919/wc-predictor-skill.git
-cp -r wc-predictor-skill/wc-predictor ~/.hermes/skills/wc-predictor
+git clone https://github.com/Nehs919/world-cup-predictor-skill.git
+cp -r world-cup-predictor-skill/wc-predictor ~/.hermes/skills/wc-predictor
 
 # 或安装远程 SKILL.md（单文件入口；仍需自行保证 scripts/ 与 data/ 在同目录）
-hermes skills install https://raw.githubusercontent.com/Nehs919/wc-predictor-skill/master/wc-predictor/SKILL.md --name wc-predictor
+hermes skills install https://raw.githubusercontent.com/Nehs919/world-cup-predictor-skill/master/wc-predictor/SKILL.md --name wc-predictor
 ```
 
 若使用方式 B 的单文件安装，请确认 `scripts/`、`data/`、`references/` 与 `SKILL.md` 在同一 skill 目录下。
@@ -86,7 +86,7 @@ hermes skills install https://raw.githubusercontent.com/Nehs919/wc-predictor-ski
 
 ```bash
 mkdir -p ~/.claude/skills/wc-predictor
-cp -r /path/to/wc-predictor-skill/wc-predictor/* ~/.claude/skills/wc-predictor/
+cp -r /path/to/world-cup-predictor-skill/wc-predictor/* ~/.claude/skills/wc-predictor/
 ```
 
 项目级：复制到 `<project>/.claude/skills/wc-predictor/` 仅对当前仓库生效。
@@ -99,7 +99,7 @@ Codex 及多个工具默认识别 **vendor-neutral** 路径：
 
 ```bash
 mkdir -p ~/.agents/skills/wc-predictor
-cp -r /path/to/wc-predictor-skill/wc-predictor/* ~/.agents/skills/wc-predictor/
+cp -r /path/to/world-cup-predictor-skill/wc-predictor/* ~/.agents/skills/wc-predictor/
 ```
 
 项目级：`.agents/skills/wc-predictor/` 或 `.github/skills/wc-predictor/`（视工具版本而定）。
@@ -110,7 +110,7 @@ cp -r /path/to/wc-predictor-skill/wc-predictor/* ~/.agents/skills/wc-predictor/
 
 ```bash
 mkdir -p ~/.gemini/skills/wc-predictor
-cp -r /path/to/wc-predictor-skill/wc-predictor/* ~/.gemini/skills/wc-predictor/
+cp -r /path/to/world-cup-predictor-skill/wc-predictor/* ~/.gemini/skills/wc-predictor/
 ```
 
 若未识别，可改用 `~/.agents/skills/wc-predictor/`。
@@ -150,5 +150,5 @@ python tools/fix_player_name_en.py
 - **Requires:** Python 3.10+, `PYTHONUTF8=1` on Windows if needed.
 - **Paths:** Cursor `~/.cursor/skills/`, Hermes `~/.hermes/skills/`, Claude `~/.claude/skills/`, Codex/multi-agent `~/.agents/skills/`, Gemini `~/.gemini/skills/`.
 - **Verify:** `python <skill-root>/scripts/predict.py --list-teams`
-- **Hermes:** `hermes skills list` after copy; or `git clone https://github.com/Nehs919/wc-predictor-skill.git`; see [Hermes skills docs](https://hermes-agent.nousresearch.com/docs/guides/work-with-skills).
+- **Hermes:** `hermes skills list` after copy; or `git clone https://github.com/Nehs919/world-cup-predictor-skill.git`; see [Hermes skills docs](https://hermes-agent.nousresearch.com/docs/guides/work-with-skills).
 - **Usage:** same workflow as Cursor — mode gate → CLI → formatted output per `SKILL.md`.
