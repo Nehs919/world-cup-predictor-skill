@@ -13,9 +13,11 @@
 [![Teams](https://img.shields.io/badge/Teams-48-2ea44f)](#1-安装-skill)
 [![Web App](https://img.shields.io/badge/Web-kengine.xx.kg-orange)](https://kengine.xx.kg)
 
-2026 世界杯比分预测的 **Agent Skill**（兼容 Cursor、Hermes Agent、Claude Code、Codex 等）。在 Agent 对话中预测任意两支参赛队的比赛结果，输出胜率、最可能比分与双方阵容。
+**world-cup-predictor-skill** 将 **Kengine** 足球仿真引擎封装为符合 [Agent Skills 标准](https://agentskills.io/specification) 的可移植技能包，可在 Cursor、Hermes Agent、Claude Code、Codex 等环境中即装即用。在 Agent 对话中指定任意两支 2026 世界杯参赛队，即可获得 **胜率分布、最可能比分与双方完整阵容**（含首发与替补）。
 
-计算由 bundled 的 **Kengine** Python 引擎完成，结果为确定性数值——Agent 必须调用 CLI，不得自行估算。
+引擎内置 **48 支球队的全量球员能力评分**，以及由历史竞技表现沉淀而来的 **球队底蕴、近期状态与比赛风格** 等结构化数据。你在对话中定义 **阵型、首发名单、比赛开放度、主客战术倾向与历史底蕴权重** 等仿真参数——或使用默认一键预测——引擎据此完成 **确定性数值推演**：同一组输入，永远得到同一组输出，而非 LLM 的即兴估算。
+
+Agent 负责理解意图、补齐参数并调用 bundled Python CLI；**所有胜率与比分均来自引擎计算，不得心算或编造。**
 
 ## 预览
 

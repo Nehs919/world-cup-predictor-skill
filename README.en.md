@@ -13,9 +13,11 @@
 [![Teams](https://img.shields.io/badge/Teams-48-2ea44f)](#1-install-the-skill)
 [![Web App](https://img.shields.io/badge/Web-kengine.xx.kg-orange)](https://kengine.xx.kg)
 
-A **portable Agent Skill** (Cursor, Hermes Agent, Claude Code, Codex, and more) for predicting 2026 FIFA World Cup match outcomes. Ask in chat for win probability, the three most likely scorelines, and both squads (starters + bench).
+**world-cup-predictor-skill** packages the **Kengine** football simulation engine as a portable skill for the [Agent Skills standard](https://agentskills.io/specification)—ready for Cursor, Hermes Agent, Claude Code, Codex, and more. Name any two 2026 FIFA World Cup teams in chat and get **win probabilities, the three most likely scorelines, and full squads** (starters and bench).
 
-All numbers come from the bundled **Kengine** Python engine — deterministic output. The Agent must run the CLI; it must not guess win rates or scores.
+The engine ships with **player ability ratings for all 48 squads**, plus structured team data distilled from **historical pedigree, recent form, and playing style**. You define the simulation—**formations, starting elevens, match openness, tactical tendencies, and heritage weight**—or accept defaults for a one-shot prediction. Kengine then runs a **deterministic numerical simulation**: identical inputs always yield identical outputs, never LLM guesswork.
+
+The Agent interprets your intent, fills in parameters, and invokes the bundled Python CLI. **Every win rate and scoreline comes from the engine—never from the model’s imagination.**
 
 ## Preview
 
