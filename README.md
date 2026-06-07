@@ -131,6 +131,30 @@ python ~/.hermes/skills/wc-predictor/scripts/predict.py --list-teams
 /wc-predictor 自定义预测巴西对阿根廷：巴西 4-2-3-1、阿根廷 4-3-3，开放度 70，历史底蕴 60%，主队战术倾向 80%、客队 50%，首发都用各队默认
 ```
 
+**让 Agent 定参数（趣玩）**
+
+除了你自己逐项指定，也可以把自定义模式下的 8 类参数**全部交给 Agent 决定**——让它根据对阵、球员和战术理解自行选阵型、首发、开放度等，再调用引擎计算。参数一旦确定，结果就是确定性的；你可以和朋友比比 **谁的 Agent 最懂球**。
+
+```
+/wc-predictor 自定义预测巴西对阿根廷，所有参数你来定，定完解释理由再预测
+```
+
+```
+/wc-predictor custom Brazil vs Argentina — you pick formation, lineups, and all sliders, then run the engine
+```
+
+### Agent 定参数 · 全场模拟（示例）
+
+下面是我们让 **Composer 2.5**、**GPT-5.5**、**Opus 4.8** 三个 Agent **自行定义每场参数**，用 Kengine 跑完 2026 世界杯**小组赛 + 淘汰赛**全程模拟的结果（各 2 张，共 6 张）：
+
+| Agent | 小组赛 | 淘汰赛 | 模拟冠军 |
+|-------|--------|--------|----------|
+| Composer 2.5 | ![Composer 小组赛](docs/images/agent-sims/group-stage-composer.png) | ![Composer 淘汰赛](docs/images/agent-sims/knockout-composer.png) | 英格兰 |
+| GPT-5.5 | ![GPT 小组赛](docs/images/agent-sims/group-stage-gpt.png) | ![GPT 淘汰赛](docs/images/agent-sims/knockout-gpt.png) | 阿根廷 |
+| Opus 4.8 | ![Opus 小组赛](docs/images/agent-sims/group-stage-opus.png) | ![Opus 淘汰赛](docs/images/agent-sims/knockout-opus.png) | 巴西 |
+
+> 看上去，**我们自己选参数会预测得更好**……要不你也试试，看能不能 beat 这些 Agent？😏
+
 ### 交互流程
 
 1. **模式分流（必做）**  
@@ -141,7 +165,7 @@ python ~/.hermes/skills/wc-predictor/scripts/predict.py --list-teams
    各队默认阵型 + 默认首发 11 人 + 开放度 50 + 主客战术倾向各 50% + 历史底蕴权重 50%。
 
 3. **自定义设定**  
-   需逐项确认全部 8 类参数：主客阵型、主客首发、开放程度、主客战术倾向、历史底蕴权重。详见 [`wc-predictor/references/parameters.md`](wc-predictor/references/parameters.md)。
+   需逐项确认全部 8 类参数：主客阵型、主客首发、开放程度、主客战术倾向、历史底蕴权重；也可明确说「参数你来定」，由 Agent 代为选择后再跑 CLI。详见 [`wc-predictor/references/parameters.md`](wc-predictor/references/parameters.md)。
 
 4. **输出**  
    Agent 运行 `predict.py` 后，按模板呈现结果：

@@ -128,6 +128,30 @@ After install, **start a new agent session**. Trigger with `/wc-predictor` or na
 /wc-predictor custom prediction Brazil vs Argentina: Brazil 4-2-3-1, Argentina 4-3-3, openness 70, heritage 60%, home tactical tendency 80%, away 50%, default lineups for both
 ```
 
+**Let the Agent pick the parameters (fun mode)**
+
+You don’t have to specify every slider yourself. In custom mode, you can tell the Agent to **choose all 8 parameter groups** — formations, lineups, openness, tendencies, heritage — based on its football read, then run the engine. Same inputs always yield the same numbers; compare results with friends and see **whose agent knows the game best**.
+
+```
+/wc-predictor custom Brazil vs Argentina — you pick every parameter, explain why, then predict
+```
+
+```
+/wc-predictor 自定义预测巴西对阿根廷，所有参数你来定，定完解释理由再预测
+```
+
+### Agent-picked params · full tournament sims (example)
+
+We let **Composer 2.5**, **GPT-5.5**, and **Opus 4.8** **choose match parameters themselves**, then ran the full **group stage + knockout** simulation through Kengine (2 images each, 6 total):
+
+| Agent | Group stage | Knockout | Predicted champion |
+|-------|-------------|----------|-------------------|
+| Composer 2.5 | ![Composer groups](docs/images/agent-sims/group-stage-composer.png) | ![Composer knockout](docs/images/agent-sims/knockout-composer.png) | England |
+| GPT-5.5 | ![GPT groups](docs/images/agent-sims/group-stage-gpt.png) | ![GPT knockout](docs/images/agent-sims/knockout-gpt.png) | Argentina |
+| Opus 4.8 | ![Opus groups](docs/images/agent-sims/group-stage-opus.png) | ![Opus knockout](docs/images/agent-sims/knockout-opus.png) | Brazil |
+
+> Looks like **picking the parameters yourself** might predict better… your turn — can you beat these agents? 😏
+
 ### Flow
 
 1. **Mode gate (required)**  
@@ -138,7 +162,7 @@ After install, **start a new agent session**. Trigger with `/wc-predictor` or na
    Each team’s default formation + default 11 starters + openness 50 + tactical tendency 50% each + heritage weight 50%.
 
 3. **Custom**  
-   All 8 parameter groups must be confirmed: formations, lineups, openness, home/away tactical tendency, heritage weight. See [`wc-predictor/references/parameters.md`](wc-predictor/references/parameters.md).
+   All 8 parameter groups must be settled before the CLI runs — either you specify each one, or you say “you pick everything” and let the Agent choose. See [`wc-predictor/references/parameters.md`](wc-predictor/references/parameters.md).
 
 4. **Output**  
    After running `predict.py`, the Agent formats the reply with:
