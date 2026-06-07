@@ -329,6 +329,19 @@ python tools/fix_player_name_en.py
 - [wc-predictor/references/formations.md](wc-predictor/references/formations.md) — 12 种阵型
 - [wc-predictor/references/teams.md](wc-predictor/references/teams.md) — 48 队 id 对照表
 
+### 作者与致谢
+
+**开发者**：[Nehs919](https://github.com/Nehs919) — Kengine 引擎与本 Skill 的创建者与维护者。
+
+在作者指导下，以下 AI Agent 参与了实现与文档协作（按贡献领域）：
+
+| Agent | 协作内容 |
+|-------|----------|
+| [Hermes Agent](https://hermes-agent.nousresearch.com/) | 引擎核心逻辑 |
+| [Cursor Agent](https://cursor.com/) | Skill 封装、文档与仓库维护 |
+
+> GitHub 侧边栏 **Contributors** 仅统计 Git 提交作者，不会自动列出 Hermes；完整致谢见上表。
+
 ### License
 
 MIT

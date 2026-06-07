@@ -298,6 +298,19 @@ Edit `wc-predictor/` in this repo, copy again to `~/.cursor/skills/wc-predictor/
 - [wc-predictor/references/formations.md](wc-predictor/references/formations.md)
 - [wc-predictor/references/teams.md](wc-predictor/references/teams.md)
 
+### Authors & acknowledgments
+
+**Developer:** [Nehs919](https://github.com/Nehs919) — creator and maintainer of the Kengine engine and this Skill.
+
+The following AI agents assisted under the developer’s direction:
+
+| Agent | Contribution |
+|-------|----------------|
+| [Hermes Agent](https://hermes-agent.nousresearch.com/) | Core engine logic |
+| [Cursor Agent](https://cursor.com/) | Skill packaging, docs, and repo maintenance |
+
+> GitHub’s **Contributors** sidebar only reflects Git commit authors; Hermes is credited here.
+
 ### License
 
 MIT
